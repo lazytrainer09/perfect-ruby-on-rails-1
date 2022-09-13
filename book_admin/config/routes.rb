@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'profiles/show'
+  get 'profiles/edit'
+  get 'profiles/update'
+  get "/books/:id" => "books#show"
+  delete "/books/:id" => "books#destroy"
+
+  resources :publisher
+  resource :profile
 end
